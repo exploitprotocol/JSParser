@@ -246,7 +246,7 @@ application = tornado.web.Application(
 )
 
 if __name__ == "__main__":
-    application.listen(portNum)
+    application.listen(portNum,address='127.0.0.1')
     tornado.ioloop.IOLoop.current().start()
 
 
