@@ -175,7 +175,8 @@ class ViewParseAjaxHandler(BaseHandler):
                 print("ignoring custom headers")
             if newHeaders:
                 sc._handle.setopt(pycurl.HTTPHEADER, newHeaders)
-
+        sc._handle.setopt(pycurl.SSL_VERIFYPEER, 0)
+        sc._handle.setopt(pycurl.SSL_VERIFYHOST, 0)
         res = sc.execute(url)
         return res
 
